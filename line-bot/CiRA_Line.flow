@@ -1,0 +1,148 @@
+{
+    "connections": [
+        {
+            "in_id": "{7cd4e0bb-781a-4cee-8e14-e3751b84239c}",
+            "in_index": 0,
+            "out_id": "{f672ef1c-0398-4329-aaac-59a0ec1deb64}",
+            "out_index": 0
+        },
+        {
+            "in_id": "{def21dab-db0e-4a78-826a-28c2bd1ce90c}",
+            "in_index": 0,
+            "out_id": "{8a19eef0-ecf2-4d0c-8828-9cf57b6b31df}",
+            "out_index": 0
+        },
+        {
+            "in_id": "{8a19eef0-ecf2-4d0c-8828-9cf57b6b31df}",
+            "in_index": 0,
+            "out_id": "{d7859393-ff2e-4d08-83a7-d1f945eb1277}",
+            "out_index": 0
+        },
+        {
+            "in_id": "{d7859393-ff2e-4d08-83a7-d1f945eb1277}",
+            "in_index": 0,
+            "out_id": "{f672ef1c-0398-4329-aaac-59a0ec1deb64}",
+            "out_index": 0
+        }
+    ],
+    "nodes": [
+        {
+            "id": "{f672ef1c-0398-4329-aaac-59a0ec1deb64}",
+            "model": {
+                "data": {
+                    "resp_timeout": 30000,
+                    "service_name": "line"
+                },
+                "name": "RosServer",
+                "node_enable": true
+            },
+            "ngo": {
+                "comment": {
+                    "data": "",
+                    "show": false
+                }
+            },
+            "position": {
+                "x": -276,
+                "y": -36
+            }
+        },
+        {
+            "id": "{7cd4e0bb-781a-4cee-8e14-e3751b84239c}",
+            "model": {
+                "height": 203,
+                "name": "Debug",
+                "output_h": 0,
+                "output_v": 0,
+                "page_index": 0,
+                "payload_h": 0,
+                "payload_v": 0,
+                "width": 306
+            },
+            "ngo": {
+                "comment": {
+                    "data": "",
+                    "show": false
+                }
+            },
+            "position": {
+                "x": 137,
+                "y": -133
+            }
+        },
+        {
+            "id": "{8a19eef0-ecf2-4d0c-8828-9cf57b6b31df}",
+            "model": {
+                "data": {
+                    "comment": "",
+                    "py_ver": "1. Python2",
+                    "script": "from datetime import datetime\n\nif payload[\"RosServer\"][\"have_image\"]:\n    save_path = \"C:\\line-bot\\line-bot\\images\"\n    img_name = datetime.now().strftime(\"%m%d%YT%H%M%S\") + \".jpg\"\n    cv2.imwrite(save_path + img_name, img)\n    payload[\"img_name\"] = img_name\n",
+                    "tmp_path": "C:/Users/uSeR"
+                },
+                "height": 47,
+                "name": "PythonScript",
+                "node_enable": true,
+                "python_code": "from datetime import datetime\n\nif payload[\"RosServer\"][\"have_image\"]:\n    save_path = \"C:\\line-bot\\line-bot\\images\"\n    img_name = datetime.now().strftime(\"%m%d%YT%H%M%S\") + \".jpg\"\n    cv2.imwrite(save_path + img_name, img)\n    payload[\"img_name\"] = img_name\n",
+                "width": 75
+            },
+            "ngo": {
+                "comment": {
+                    "data": "",
+                    "show": false
+                }
+            },
+            "position": {
+                "x": -50.140017758349856,
+                "y": 150.38877125879384
+            }
+        },
+        {
+            "id": "{d7859393-ff2e-4d08-83a7-d1f945eb1277}",
+            "model": {
+                "jso": {
+                    "text": ""
+                },
+                "name": "SetPayload",
+                "node_enable": true,
+                "payload_data": "{\n    \"text\": \"\"\n}\n"
+            },
+            "ngo": {
+                "comment": {
+                    "data": "",
+                    "show": false
+                }
+            },
+            "position": {
+                "x": -207.30988320469916,
+                "y": 153.1208250802541
+            }
+        },
+        {
+            "id": "{def21dab-db0e-4a78-826a-28c2bd1ce90c}",
+            "model": {
+                "data": {
+                    "jpg": true,
+                    "png": false,
+                    "send_img": false
+                },
+                "name": "RosResponse",
+                "node_enable": true
+            },
+            "ngo": {
+                "comment": {
+                    "data": "",
+                    "show": false
+                }
+            },
+            "position": {
+                "x": 119.66382077726928,
+                "y": 213.41506727682534
+            }
+        }
+    ],
+    "scene_data": {
+        "flow_view_pos_x": -500.58677685950397,
+        "flow_view_pos_y": -136.27272727272748,
+        "flow_view_zoom_factor": 1.4641000000000006
+    }
+}
